@@ -15,20 +15,30 @@ yarn serve
 yarn build
 ```
 
-### Run your unit tests
-```
-yarn test:unit
-```
-
-### Run your end-to-end tests
-```
-yarn test:e2e
-```
-
 ### Lints and fixes files
 ```
 yarn lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## How to make user actions async
+First we need to have the mutation `removeLink` that does main data operation
+```
+ mutations: {
+    REMOVE_ALL: state => {
+      state.links = [];
+    }
+  },
+```
+then we declare action `removeAll` that will be used with `setTimeout`
+```
+actions: {
+    removeAll({ commit }) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          commit("REMOVE_ALL");
+          resolve();
+        }, 3000);
+      });
+    }
+  }
+  ```
