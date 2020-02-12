@@ -2,7 +2,7 @@
   "name": "vue-ui-delay",
   "version": "0.0.1",
   "private": false,
-  "description": "Atempt at having UI state updates after certain delay",
+  "description": "Attempt at having UI state updates after certain delay",
   "author": {
     "name": "pawelkrystkiewicz",
     "email": "pawelkrystkiewicz@outlook.com"
